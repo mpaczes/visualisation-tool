@@ -1,9 +1,9 @@
 <div class="time-navigation">
-  <button mat-button (click)="onPrevious()" [disabled]="currentIndex === 0">
+  <button mat-raised-button color="primary" (click)="onPrevious()" [disabled]="currentIndex === 0">
     Previous
   </button>
   <span class="timestamp">{{ timestamps[currentIndex] }}</span>
-  <button mat-button (click)="onNext()" [disabled]="currentIndex === timestamps.length - 1">
+  <button mat-raised-button color="primary" (click)="onNext()" [disabled]="currentIndex === timestamps.length - 1">
     Next
   </button>
 </div>
