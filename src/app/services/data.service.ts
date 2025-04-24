@@ -33,9 +33,10 @@ export class DataService {
     const orders: Order[] = [];
 
     for (let index = 1; index <= 10; index++) {
-      const order: Order = { price: 0, quantity: 0 };
+      const order: Order = { price: 0, quantity: 0, totalAmount: 0 };
       order.price = tradingData[`${type}${index}`];
       order.quantity = tradingData[`${type}${index}Size`];
+      order.totalAmount = Math.round(order.price * order.quantity);
       orders.push(order);
     }
 

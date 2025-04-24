@@ -9,5 +9,5 @@ import { OrderBookSnapshot } from 'src/app/models/trading-data.model';
 export class OrderBookComponent {
   @Input() snapshot: OrderBookSnapshot | null = null;
 
-  displayedColumns: string[] = ['price', 'quantity'];
+  displayedColumns: string[] = ['price', 'quantity', 'totalAmount'];
 }
