@@ -1,0 +1,14 @@
+.time-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+}
+
+.time-navigation .timestamp {
+  font-weight: bold;
+  font-size: 1.2em;
+}
