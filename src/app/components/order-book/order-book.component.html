@@ -17,7 +17,7 @@
 
       <ng-container matColumnDef="totalAmount">
         <th mat-header-cell *matHeaderCellDef> Total amount </th>
-        <td mat-cell *matCellDef="let element"> {{ element.totalAmount }} </td>
+        <td mat-cell *matCellDef="let element" class="ask"> {{ element.totalAmount }} </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -38,7 +38,7 @@
 
       <ng-container matColumnDef="totalAmount">
         <th mat-header-cell *matHeaderCellDef> Total amount </th>
-        <td mat-cell *matCellDef="let element"> {{ element.totalAmount }} </td>
+        <td mat-cell *matCellDef="let element" class="bid"> {{ element.totalAmount }} </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
