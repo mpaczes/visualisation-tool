@@ -6,7 +6,7 @@ import { BehaviorSubject, interval, Subscription } from 'rxjs';
 })
 export class ReplayService {
   private replaySubject = new BehaviorSubject<number>(0);
-  private replayInterval = 20000; // 3000; // Replay duration in milliseconds
+  private replayInterval = 20000;
   private subscription: Subscription | null = null;
 
   getReplayObservable() {

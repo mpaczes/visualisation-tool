@@ -15,36 +15,13 @@ export class DataService {
   getTradingData(): Observable<OrderBookSnapshot[]> {
     return this.http.get<any[]>(this.dataUrl).pipe(
       map((data: any[]) => {
-        // console.log('DataService - data : ', data);
-
         const orderBookSnapshots: OrderBookSnapshot[] = [];
 
         for (const tradingData of data) {
           const orderBookSnapshot: OrderBookSnapshot = { timestamp: '', bids: [], asks: [] };
-
-          // timestamp
           orderBookSnapshot.timestamp = tradingData['Time'];
-
-          // // ask order
-          // for (let index = 1; index <= 10; index++) {
-          //   const askOrder: Order = { price: 0, quantity: 0 };
-          //   askOrder.price = tradingData[`Ask${index}`];
-          //   askOrder.quantity = tradingData[`Ask${index}Size`];
-          //   orderBookSnapshot.asks.push(askOrder);
-          // }
-
-          // // bid order
-          // for (let index = 1; index <= 10; index++) {
-          //   const bidOrder: Order = { price: 0, quantity: 0 };
-          //   bidOrder.price = tradingData[`Bid${index}`];
-          //   bidOrder.quantity = tradingData[`Bid${index}Size`];
-          //   orderBookSnapshot.bids.push(bidOrder);
-          // }
-
           orderBookSnapshot.asks = this.createOrders(tradingData, 'Ask');
           orderBookSnapshot.bids = this.createOrders(tradingData, 'Bid');
-
-          // add order book snapshot to the array
           orderBookSnapshots.push(orderBookSnapshot);
         }
 
