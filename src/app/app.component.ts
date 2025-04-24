@@ -13,8 +13,8 @@ export class AppComponent implements OnInit, OnDestroy {
   tradingData: OrderBookSnapshot[] = [];
   currentSnapshot: OrderBookSnapshot | null = null;
   currentIndex: number = 0;
-  tradingDataSubscription!: Subscription;
-  replaySubscription!: Subscription;
+  tradingDataSubscription: Subscription = new Subscription();
+  replaySubscription: Subscription = new Subscription();
 
   constructor(private dataService: DataService, private replayService: ReplayService) {}
 
